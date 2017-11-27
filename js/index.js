@@ -17,6 +17,8 @@ $('.four-oh-four-form').on('submit', function(e){
 
 	 if (val === 'termicode'){
     showKittens();
+  } else if(val === 'jog'){
+    showMessage('Hello From Jogendra :). If you need any help, please drope a message on jogendra.singh.jog@gmail.com');
   }else {
     resetForm();
   }
@@ -40,6 +42,15 @@ function resetForm(withKittens){
   ), {duration: 100}
 }
 
+function showMessage(messageString){
+  $('.new-output').removeClass('new-output');
+  input.val('');
+  $('.terminal').append('<p class="prompt">' + messageString + '</p><p class="prompt output new-output"></p>');
+
+  $('.new-output').velocity(
+    'scroll'
+  ), {duration: 100}
+}
 	function showKittens(){
 		$('.terminal').append("<div class='kittens'>"+
 
